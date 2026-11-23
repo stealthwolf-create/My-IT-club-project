@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NeuroSilent app</title>
+  <!-- linking my css file -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="main-box">
+    <!-- top header part -->
+    <div class="top-header">
+      <div>
+        <h1>NeuroSilent</h1>
+        <p class="sub-text">Local Edge Decoder - Zero Cloud</p>
+      </div>
+      <span class="tag">EEG + sEMG</span>
+    </div>
+
+    <!-- privacy cutoff bar -->
+    <div class="privacy-stuff">
+      <div>
+        <span id="statusDot" class="dot"></span>
+        <span id="privacyText" class="status-label">Sensors Active</span>
+      </div>
+      <button id="muteBtn" class="mute-button">Hardware Mute</button>
+    </div>
+
+    <!-- wave boxes -->
+    <div class="graph-container">
+      <div class="graph-top">
+        <span>Dry-EEG (Motor Speech Intent)</span>
+        <span class="blue-txt">8–30 Hz</span>
+      </div>
+      <canvas id="eegCanvas" width="380" height="65"></canvas>
+    </div>
+
+    <div class="graph-container">
+      <div class="graph-top">
+        <span>Surface EMG (Subvocal Jaw/Throat)</span>
+        <span class="purple-txt">20–450 Hz</span>
+      </div>
+      <canvas id="emgCanvas" width="380" height="65"></canvas>
+    </div>
+
+    <!-- output box -->
+    <div class="result-box">
+      <p class="small-title">DECODED SPEECH INTENT</p>
+      <div id="decodedWord" class="big-word">Ready...</div>
+      <p id="metrics" class="stats-txt">Confidence: -- | Latency: --</p>
+    </div>
+
+    <!-- buttons for testing -->
+    <p class="btn-label">Simulate Subvocal Intent Trigger:</p>
+    <div class="buttons-grid" id="cmdGrid">
+      <button class="word-btn">"Yes"</button>
+      <button class="word-btn">"No"</button>
+      <button class="word-btn">"Water"</button>
+      <button class="word-btn">"Pain"</button>
+      <button class="word-btn">"Help"</button>
+      <button class="word-btn">🔊 Speak</button>
+    </div>
+  </div>
+
+</body>
+</html>
